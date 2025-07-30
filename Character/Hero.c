@@ -1,4 +1,5 @@
 #include "Hero.h"
+#include <stdio.h>
 
 // //英雄的发布上线时间
 // typedef struct myTime
@@ -22,7 +23,7 @@
 
 // }Hero;
 
-Hero hero[] = {
+Hero heros[] = {
   {
    .name = "影流之主",
    .sex = 'm',
@@ -71,4 +72,20 @@ Hero hero[] = {
 void show()
 {
   //如何知道结构数组的大小呢
+  int count = sizeof(heros)/sizeof(Hero);
+  //printf("hero的个数:%d",len);
+  printf("请输入名称:");  
+  scanf_s("%s",heros[0].name);
+  //fgets(heros[0].name, sizeof(heros[0].name), stdin);   //更改名称
+  for (int i = 0; i < count; i++)
+  {
+    printf("%s\t%s\t%d-%d-%d\n",
+      heros[i].name,  
+      heros[i].job,
+      heros[i].pubTime.year,
+      heros[i].pubTime.month,
+      heros[i].pubTime.day);
+  }
+  
+
 }

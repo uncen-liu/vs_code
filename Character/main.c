@@ -3,9 +3,11 @@
 #include <stdlib.h>
 #include "Hero.h"
 
-extern Hero hero[100];
+extern Hero heros[100];
 
 int main()
 {
+      system("chcp 65001");
       //printf("%s\n",hero[0].name);
+      show();
 }
